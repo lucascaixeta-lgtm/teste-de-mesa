@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define tamanho 5
+#define tamanho 100000
 
 void bubbleSort(int vetor[], int tam){
     int i, j;
@@ -24,7 +24,7 @@ int main(){
     srand(time(NULL));
 
     for(int i = 0; i < tamanho; i++){
-        V[i] = (rand() % 100) + 1;
+        V[i] = (rand() % 10000) + 1;
     }
 
     
@@ -32,7 +32,7 @@ int main(){
     for (int i = 0; i < tamanho; i++){
         printf("%d ", V[i]);
     }
-    printf("\n");
+    printf("\n\n");
     
 
     bubbleSort(V, tamanho);

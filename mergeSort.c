@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define tamanho 20
+#define tamanho 100000
+
 
 void merger(int V[], int inicio, int fim);
 void intercalacao(int V[], int inicio, int fim, int meio);
@@ -13,16 +14,16 @@ int main()
     srand(time(NULL));
 
     for(int i = 0; i < tamanho; i++){
-        vector[i] = (rand() % 100) + 1;
+        vector[i] = (rand() % 10000) + 1;
     }
 
-    /*
+    
     printf("Vetor original:");
     for(int i = 0; i < tamanho; i++){
         printf(" %d", vector[i]);
     }
-    printf("\n");
-    */
+    printf("\n\n");
+    
 
     merger(vector, 0, tamanho - 1);
 
@@ -31,7 +32,7 @@ int main()
     for(int i = 0; i < tamanho; i++){
         printf(" %d", vector[i]);
     }
-    printf("\n");
+    printf("\n\n");
 
      int start_time = clock() / CLOCKS_PER_SEC;
     printf("Tempo de execucao: %d segundos no merge sort\n", start_time);

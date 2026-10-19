@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define tamanho 20
+#define tamanho 100000
 
 void insertSort(int vetor[], int tam){
 
     int i, j, chave;
-    for(i = 1; i < tam; i++){
-        chave = vetor[i];
-        j = i - 1;
-        while(j >= 0 && vetor[j] > chave){
+    for(i = 1; i < tam; i++){ //O(N)
+        chave = vetor[i]; // O(N - 1)
+        j = i - 1; //O(N - 1)
+        while(j >= 0 && vetor[j] > chave){  //O(N)
             vetor[j + 1] = vetor[j];
             j--;
         }
@@ -25,16 +25,16 @@ int main(){
     srand(time(NULL));
 
     for(int i = 0; i < tamanho; i++){
-        V[i] = (rand() % 100) + 1;
+        V[i] = (rand() % 10000) + 1;
     }
 
-    /*
+    
     printf("Lista de numeros dessordenados: \n");
     for (int i = 0; i < tamanho; i++){
         printf("%d ", V[i]);
     }
-    printf("\n");
-    */
+    printf("\n\n");
+    
 
     insertSort(V, tamanho);
 
